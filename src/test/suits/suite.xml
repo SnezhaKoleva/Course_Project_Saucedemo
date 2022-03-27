@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="3" verbose="1" name="Course_Project_Saucedemo"
+       annotations="JDK" parallel="tests">
+
+    <test name="First Test Suite">
+        <classes>
+            <class name="tests.LoginSuccessful"/>
+        </classes>
+    </test>
+    <test name="Hard Assert">
+        <classes>
+            <class name="tests.LoginUnsuccessful"/>
+        </classes>
+    </test>
+    <test name="Soft assert">
+        <classes>
+            <class name="tests.AddToCart"/>
+        </classes>
+    </test>
+</suite>
