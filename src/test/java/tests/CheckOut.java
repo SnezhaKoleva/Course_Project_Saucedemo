@@ -27,12 +27,12 @@ public class CheckOut extends TestUtil {
         CheckOutPage checkOutPage =new CheckOutPage(driver);
 
 
-        productsPage.addItemToTheCart("sauce-labs-backpack");
+        productsPage.addItemToTheCart("sauce-labs-bolt-t-shirt");
 
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertEquals(productsPage.getItemsInTheCart(),1);
 
-        productsPage.addItemToTheCart("sauce-labs-bike-light");
+        productsPage.addItemToTheCart("test.allthethings()-t-shirt-(red)");
 
         softAssert.assertEquals(productsPage.getItemsInTheCart(),2);
 

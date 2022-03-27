@@ -27,6 +27,9 @@ public class AddToCart extends TestUtil {
 
         softAssert.assertEquals(productsPage.getItemsInTheCart(),2);
 
+        productsPage.addItemToTheCart("sauce-labs-onesie");
+        softAssert.assertEquals(productsPage.getItemsInTheCart(),3);
+
         softAssert.assertAll();
 
 
