@@ -11,7 +11,7 @@ import utils.CsvHelper;
 
 import java.io.IOException;
 
-public class ImageItemTest extends TestUtil {
+public class ImageForItem extends TestUtil {
 
 
     @DataProvider(name = "csvInventory")

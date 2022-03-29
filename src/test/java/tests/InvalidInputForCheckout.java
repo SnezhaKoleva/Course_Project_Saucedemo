@@ -12,7 +12,7 @@ import utils.CsvHelper;
 
 import java.io.IOException;
 
-public class InputValidationCheckout extends TestUtil {
+public class InvalidInputForCheckout extends TestUtil {
 
     @DataProvider(name = "inputInvalidDataForCheckout")
     public static Object [][] readValidUsersFromScvFile() throws IOException, CsvException {
