@@ -9,7 +9,6 @@ import pages.CheckOutPage;
 import pages.LoginPage;
 import pages.ProductsPage;
 import utils.CsvHelper;
-
 import java.io.IOException;
 
 
@@ -23,21 +22,20 @@ public class CheckOut extends TestUtil {
     public void checkOut(String userName,String password) throws InterruptedException {
 
         LoginPage loginPage=new LoginPage(driver);
-        ProductsPage productsPage= loginPage.login(userName,password);
+        ProductsPage productsPage = loginPage.login(userName,password);
         CheckOutPage checkOutPage =new CheckOutPage(driver);
-
 
         productsPage.addItemToTheCart("sauce-labs-bolt-t-shirt");
 
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertEquals(productsPage.getItemsInTheCart(),1);
 
+
         productsPage.addItemToTheCart("test.allthethings()-t-shirt-(red)");
 
         softAssert.assertEquals(productsPage.getItemsInTheCart(),2);
 
-
-        productsPage.letsCheckOut();
+        productsPage.clickTheCartLink();
 
         checkOutPage.checkOut();
 

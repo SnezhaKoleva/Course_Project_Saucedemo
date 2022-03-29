@@ -7,7 +7,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -29,7 +28,7 @@ public class TestUtil {
     public void tearDown(){
         driver.quit();
     }
-  public void setupBrowserDriver()  {
+   public void setupBrowserDriver()  {
      try (FileInputStream configFile = new FileInputStream("src/test/resources/config.properties")){
          Properties config =new Properties();
          config.load(configFile);
@@ -52,10 +51,11 @@ public class TestUtil {
               throw new IllegalStateException("Unsupported browser type");
 
       }
-    }public void loadUrl(String url){
+    }
+    public void loadUrl(String url){
         driver.get(url);
     }
-   public void createChromeDriver(String url,int implicitWait){
+    public void createChromeDriver(String url,int implicitWait){
        WebDriverManager.chromedriver().setup();
        driver = new ChromeDriver();
        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
@@ -75,7 +75,6 @@ public class TestUtil {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
         loadUrl(url);
    }
-
 
 
 }

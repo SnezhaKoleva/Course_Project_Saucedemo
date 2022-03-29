@@ -1,6 +1,5 @@
 package pages;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,28 +15,28 @@ public class CheckOutPage {
     protected WebDriver driver;
 
     @FindBy(css = "[name=checkout]")
-    WebElement checkoutBtn;
+    private WebElement checkoutBtn;
 
     @FindBy(xpath = "//input[@placeholder='First Name']")
-    WebElement firstNameInput;
+    private WebElement firstNameInput;
 
     @FindBy(xpath = "//input[@placeholder='Last Name']")
-    WebElement lastNameInput;
+    private WebElement lastNameInput;
 
     @FindBy(xpath = "//input[@placeholder='Zip/Postal Code']")
-    WebElement codeInput;
+    private WebElement codeInput;
 
     @FindBy(css = "[value=Continue]")
-    WebElement submitContinueBtn;
+    private WebElement submitContinueBtn;
 
     @FindBy(css = "[name=finish]")
-    WebElement finishBtn;
+    private WebElement finishBtn;
 
     @FindBy(id = "back-to-products")
-    WebElement backHomeBtn;
+    private WebElement backHomeBtn;
 
-    @FindBy(xpath = "//button[@class='error-button']")
-    WebElement errorEmptyInput;
+    @FindBy(css = "[class=error-button]")
+    private WebElement errorEmptyInput;
 
 
     public CheckOutPage(WebDriver driver){
@@ -54,7 +53,6 @@ public class CheckOutPage {
         firstNameInput.click();
         firstNameInput.sendKeys("nnn");
 
-
         lastNameInput.click();
         lastNameInput.sendKeys("jjj");
 
@@ -65,6 +63,8 @@ public class CheckOutPage {
 
         fluentWait.until(ExpectedConditions.elementToBeClickable(submitContinueBtn));
         submitContinueBtn.click();
+
+
         Thread.sleep(3000);
 
 
@@ -74,12 +74,16 @@ public class CheckOutPage {
         fluentWait.until(ExpectedConditions.elementToBeClickable(backHomeBtn));
         backHomeBtn.click();
 
-
     }
-    public void invalidDataInputForCheckout(String firstName,String lastName,String code ){
+
+    public void invalidInputValidationForCheckout(String firstName, String lastName, String code ){
+
+
         FluentWait fluentWait=new FluentWait(driver).withTimeout(Duration.ofSeconds(3));
         fluentWait.until(ExpectedConditions.elementToBeClickable(checkoutBtn));
+
         checkoutBtn.click();
+        fluentWait.until(ExpectedConditions.elementToBeClickable(codeInput));
 
         firstNameInput.click();
         firstNameInput.sendKeys(firstName);
@@ -87,11 +91,15 @@ public class CheckOutPage {
         lastNameInput.click();
         lastNameInput.sendKeys(lastName);
 
-        fluentWait.until(ExpectedConditions.elementToBeClickable(codeInput));
+
         codeInput.click();
         codeInput.sendKeys(code);
 
+        submitContinueBtn.click();
+
         Assert.assertTrue(errorEmptyInput.isDisplayed());
+
+
 
     }
 
