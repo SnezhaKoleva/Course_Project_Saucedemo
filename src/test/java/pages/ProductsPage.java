@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
-
 import java.time.Duration;
 
 public class ProductsPage {
@@ -35,7 +34,9 @@ public class ProductsPage {
 
         FluentWait fluentWait = new FluentWait(driver).withTimeout(Duration.ofSeconds(3));
         fluentWait.until(ExpectedConditions.elementToBeClickable(addToCartButton));
+
         addToCartButton.click();
+
         String xpathOfRemoveItemButton=String.format(REMOVE_ITEM_BUTTON,productName);
         WebElement removeItemButton = driver.findElement(By.xpath(xpathOfRemoveItemButton));
         fluentWait.until(ExpectedConditions.elementToBeClickable(removeItemButton));

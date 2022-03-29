@@ -8,7 +8,6 @@ import pages.LoginPage;
 import pages.ProductsPage;
 import pages.ImagePage;
 import utils.CsvHelper;
-
 import java.io.IOException;
 
 public class ImageForItem extends TestUtil {
