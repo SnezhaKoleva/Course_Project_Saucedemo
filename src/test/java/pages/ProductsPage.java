@@ -36,6 +36,10 @@ public class ProductsPage {
         FluentWait fluentWait = new FluentWait(driver).withTimeout(Duration.ofSeconds(3));
         fluentWait.until(ExpectedConditions.elementToBeClickable(addToCartButton));
         addToCartButton.click();
+        String xpathOfRemoveItemButton=String.format(REMOVE_ITEM_BUTTON,productName);
+        WebElement removeItemButton = driver.findElement(By.xpath(xpathOfRemoveItemButton));
+        fluentWait.until(ExpectedConditions.elementToBeClickable(removeItemButton));
+        Assert.assertTrue(removeItemButton.isDisplayed());
 
     }
     public void removeItem(String productName){
