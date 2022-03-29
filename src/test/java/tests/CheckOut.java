@@ -37,6 +37,9 @@ public class CheckOut extends TestUtil {
 
         productsPage.clickTheCartLink();
 
+        productsPage.removeItem("test.allthethings()-t-shirt-(red)");
+        softAssert.assertEquals(productsPage.getItemsInTheCart(),1);
+
         checkOutPage.checkOut();
 
         softAssert.assertAll();

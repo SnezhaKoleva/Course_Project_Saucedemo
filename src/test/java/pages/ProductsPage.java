@@ -37,11 +37,15 @@ public class ProductsPage {
         fluentWait.until(ExpectedConditions.elementToBeClickable(addToCartButton));
         addToCartButton.click();
 
+    }
+    public void removeItem(String productName){
         String xpathOfRemoveItemButton=String.format(REMOVE_ITEM_BUTTON,productName);
         WebElement removeItemButton = driver.findElement(By.xpath(xpathOfRemoveItemButton));
 
-        fluentWait.until(ExpectedConditions.visibilityOf(removeItemButton));
+        FluentWait fluentWait=new FluentWait(driver).withTimeout(Duration.ofSeconds(3));
+        fluentWait.until(ExpectedConditions.elementToBeClickable(removeItemButton));
         Assert.assertTrue(removeItemButton.isDisplayed());
+        removeItemButton.click();
 
     }
 
@@ -54,5 +58,11 @@ public class ProductsPage {
 
     public void clickTheCartLink() {
         shoppingCartLink.click();
+
     }
+
+
+
 }
+
+
