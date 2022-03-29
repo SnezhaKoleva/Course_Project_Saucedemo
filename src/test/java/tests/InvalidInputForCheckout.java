@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class InvalidInputForCheckout extends TestUtil {
 
-    @DataProvider(name = "inputInvalidDataForCheckout")
+    @DataProvider(name = "csvErrorInput")
     public static Object [][] readValidUsersFromScvFile() throws IOException, CsvException {
         return CsvHelper.readScvFile("src/test/resources/checkout.error.input.csv");
     }
