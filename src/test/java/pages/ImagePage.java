@@ -33,6 +33,7 @@ public class ImagePage {
         fluentWait.until(ExpectedConditions.visibilityOf(nameOfTheItem));
         fluentWait.until(ExpectedConditions.visibilityOf(imageOfTheItem));
 
+        Assert.assertTrue(nameOfTheItem.isDisplayed());
         Assert.assertTrue(imageOfTheItem.isDisplayed());
 
     }
