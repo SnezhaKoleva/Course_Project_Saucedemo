@@ -12,34 +12,24 @@ import java.io.IOException;
 
 
 public class AddToCart extends TestUtil {
-    @DataProvider(name = "csvValidUsers")
+    @DataProvider(name = "csvItems")
     public static Object [][] readValidUsersFromScvFile() throws IOException, CsvException {
-        return CsvHelper.readScvFile("src/test/resources/valid.users.csv");
+        return CsvHelper.readScvFile("src/test/resources/items.csv");
     }
 
-    @Test(dataProvider = "csvValidUsers")
-    public void addItemsToTheCart(String userName,String password){
+    @Test(dataProvider = "csvItems")
+    public void addItemsToTheCart(String productsName){
         LoginPage loginPage=new LoginPage(driver);
-        ProductsPage productsPage = loginPage.login(userName,password);
+        ProductsPage productsPage = loginPage.login("standard_user", "secret_sauce");
 
-        productsPage.addItemToTheCart("sauce-labs-backpack");
+        productsPage.addItemToTheCart(productsName);
 
         SoftAssert softAssert=new SoftAssert();
-        softAssert.assertEquals(productsPage.getItemsInTheCart(),1);
+        softAssert.assertEquals(productsPage.getItemsInTheCart(),1,"One added product");
 
-        productsPage.addItemToTheCart("sauce-labs-bike-light");
-
-        softAssert.assertEquals(productsPage.getItemsInTheCart(),2);
-
-        productsPage.addItemToTheCart("sauce-labs-onesie");
-        softAssert.assertEquals(productsPage.getItemsInTheCart(),3);
 
         softAssert.assertAll();
 
-
-
     }
-
-
 
 }

@@ -28,17 +28,18 @@ public class CheckOutForValidUsers extends TestUtil {
         productsPage.addItemToTheCart("sauce-labs-bolt-t-shirt");
 
         SoftAssert softAssert=new SoftAssert();
-        softAssert.assertEquals(productsPage.getItemsInTheCart(),1);
+        softAssert.assertEquals(productsPage.getItemsInTheCart(),1,"One added product");
 
 
         productsPage.addItemToTheCart("test.allthethings()-t-shirt-(red)");
 
-        softAssert.assertEquals(productsPage.getItemsInTheCart(),2);
+        softAssert.assertEquals(productsPage.getItemsInTheCart(),2,"Two added products");
 
         productsPage.clickTheCartLink();
 
         productsPage.removeItem("test.allthethings()-t-shirt-(red)");
-        softAssert.assertEquals(productsPage.getItemsInTheCart(),1);
+        softAssert.assertEquals(productsPage.getItemsInTheCart(),1,
+                "One product removed,one left");
 
         checkOutPage.checkOut();
 
