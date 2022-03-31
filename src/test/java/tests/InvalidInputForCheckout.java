@@ -14,12 +14,12 @@ import java.io.IOException;
 
 public class InvalidInputForCheckout extends TestUtil {
 
-    @DataProvider(name = "csvErrorInput")
+    @DataProvider(name ="csvInvalidInput")
     public static Object [][] readValidUsersFromScvFile() throws IOException, CsvException {
-        return CsvHelper.readScvFile("src/test/resources/checkout.error.input.csv");
+        return CsvHelper.readScvFile("src/test/resources/invalid.input.checkout.csv");
     }
-    @Test(dataProvider = "csvErrorInput")
-    public void inputInvalidDataForCheckout(String firstName, String lastName, String code)
+    @Test(dataProvider = "csvInvalidInput")
+    public void invalidInputCheckoutValidation(String firstName, String lastName, String code)
             throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         ProductsPage productsPage =loginPage.login("standard_user","secret_sauce");
