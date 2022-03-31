@@ -1,8 +1,6 @@
 package tests;
 
 import base.TestUtil;
-
-
 import com.opencsv.exceptions.CsvException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
