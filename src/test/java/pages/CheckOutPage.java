@@ -76,10 +76,10 @@ public class CheckOutPage {
 
     }
 
-    public void invalidInputValidationForCheckout(String firstName, String lastName, String code ){
+    public void invalidInputValidationForCheckout(String firstName, String lastName, String code ) {
 
 
-        FluentWait fluentWait=new FluentWait(driver).withTimeout(Duration.ofSeconds(3));
+        FluentWait fluentWait = new FluentWait(driver).withTimeout(Duration.ofSeconds(3));
         fluentWait.until(ExpectedConditions.elementToBeClickable(checkoutBtn));
 
         checkoutBtn.click();
@@ -99,9 +99,6 @@ public class CheckOutPage {
 
         Assert.assertTrue(errorEmptyInput.isDisplayed());
 
-
-
     }
-
 
 }

@@ -41,7 +41,6 @@ public class ProductsPage {
         WebElement removeItemButton = driver.findElement(By.xpath(xpathOfRemoveItemButton));
         fluentWait.until(ExpectedConditions.elementToBeClickable(removeItemButton));
         Assert.assertTrue(removeItemButton.isDisplayed());
-
     }
     public void removeItem(String productName){
         String xpathOfRemoveItemButton=String.format(REMOVE_ITEM_BUTTON,productName);
@@ -55,7 +54,7 @@ public class ProductsPage {
     }
 
     public int getItemsInTheCart() {
-        if (shoppingCartCounter.getText().isEmpty()) {
+        if (!shoppingCartCounter.isDisplayed()) {
             return 0;
         } else
             return Integer.parseInt(shoppingCartCounter.getText());

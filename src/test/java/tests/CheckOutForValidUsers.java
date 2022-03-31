@@ -12,7 +12,7 @@ import utils.CsvHelper;
 import java.io.IOException;
 
 
-public class CheckOut extends TestUtil {
+public class CheckOutForValidUsers extends TestUtil {
     @DataProvider(name = "csvValidUsers")
     public static Object [][] readValidUsersFromScvFile() throws IOException, CsvException {
         return CsvHelper.readScvFile("src/test/resources/valid.users.csv");
