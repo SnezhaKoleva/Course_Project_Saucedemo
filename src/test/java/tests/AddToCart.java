@@ -13,23 +13,22 @@ import java.io.IOException;
 
 public class AddToCart extends TestUtil {
     @DataProvider(name = "csvItems")
-    public static Object [][] readValidUsersFromScvFile() throws IOException, CsvException {
+    public static Object[][] readValidUsersFromScvFile() throws IOException, CsvException {
         return CsvHelper.readScvFile("src/test/resources/items.csv");
     }
 
     @Test(dataProvider = "csvItems")
-    public void addItemsToTheCart(String productsName){
-        LoginPage loginPage=new LoginPage(driver);
+    public void addItemsToTheCart(String productsName) {
+        LoginPage loginPage = new LoginPage(driver);
         ProductsPage productsPage = loginPage.login("standard_user", "secret_sauce");
 
         productsPage.addItemToTheCart(productsName);
 
-        SoftAssert softAssert=new SoftAssert();
-        softAssert.assertEquals(productsPage.getItemsInTheCart(),1,"One added product");
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(productsPage.getItemsInTheCart(), 1, "One added product");
 
 
         softAssert.assertAll();
 
     }
-
 }
