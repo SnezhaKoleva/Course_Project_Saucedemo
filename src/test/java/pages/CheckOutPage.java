@@ -64,13 +64,9 @@ public class CheckOutPage {
         fluentWait.until(ExpectedConditions.elementToBeClickable(submitContinueBtn));
         submitContinueBtn.click();
 
-
-        Thread.sleep(3000);
-
-
         fluentWait.until(ExpectedConditions.elementToBeClickable(finishBtn));
         finishBtn.click();
-        Thread.sleep(3000);
+
         fluentWait.until(ExpectedConditions.elementToBeClickable(backHomeBtn));
         backHomeBtn.click();
 

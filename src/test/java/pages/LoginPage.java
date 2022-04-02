@@ -22,7 +22,6 @@ public class LoginPage {
     private WebElement errorLoginLabel;
 
 
-
    public LoginPage(WebDriver driver){
        this.driver=driver;
        PageFactory.initElements(driver,this);
@@ -40,7 +39,6 @@ public class LoginPage {
        loginBtn.click();
 
        return new ProductsPage(driver);
-
 
 
    } public void tryLogin(String username,String password){

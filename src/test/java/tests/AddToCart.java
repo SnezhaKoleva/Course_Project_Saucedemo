@@ -28,7 +28,6 @@ public class AddToCart extends TestUtil {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(productsPage.getItemsInTheCart(), 1, "One added product");
 
-
         softAssert.assertAll();
 
     }
