@@ -29,9 +29,9 @@ public class CheckOutForEveryItem extends TestUtil {
 
         CheckOutPage checkOutPage = new CheckOutPage(driver);
 
-        SoftAssert softAssert=new SoftAssert();
         productsPage.addItemToTheCart(itemName);
 
+        SoftAssert softAssert=new SoftAssert();
         softAssert.assertEquals(productsPage.getItemsInTheCart(),1);
 
         productsPage.clickTheCartLink();
