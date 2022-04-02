@@ -51,13 +51,16 @@ public class CheckOutPage {
         checkoutBtn.click();
 
         firstNameInput.click();
+        firstNameInput.clear();
         firstNameInput.sendKeys("nnn");
 
         lastNameInput.click();
+        lastNameInput.clear();
         lastNameInput.sendKeys("jjj");
 
         fluentWait.until(ExpectedConditions.elementToBeClickable(codeInput));
         codeInput.click();
+        codeInput.clear();
         codeInput.sendKeys("mmmm");
 
 
@@ -82,13 +85,15 @@ public class CheckOutPage {
         fluentWait.until(ExpectedConditions.elementToBeClickable(codeInput));
 
         firstNameInput.click();
+        firstNameInput.clear();
         firstNameInput.sendKeys(firstName);
 
         lastNameInput.click();
+        lastNameInput.clear();
         lastNameInput.sendKeys(lastName);
 
-
         codeInput.click();
+        codeInput.clear();
         codeInput.sendKeys(code);
 
         submitContinueBtn.click();
