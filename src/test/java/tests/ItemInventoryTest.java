@@ -4,7 +4,7 @@ import base.TestUtil;
 import com.opencsv.exceptions.CsvException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.InventoryPage;
+import pages.ItemInventoryPage;
 import pages.LoginPage;
 import utils.CsvHelper;
 
@@ -21,8 +21,8 @@ public class ItemInventoryTest extends TestUtil {
         LoginPage loginPage=new LoginPage(driver);
         loginPage.login("standard_user","secret_sauce");
 
-        InventoryPage inventoryPage=new InventoryPage(driver);
-        inventoryPage.checkInventory(Integer.valueOf(itemNumber),itemName,itemPrice,itemDescription);
+        ItemInventoryPage itemInventoryPage =new ItemInventoryPage(driver);
+        itemInventoryPage.checkInventory(Integer.valueOf(itemNumber),itemName,itemPrice,itemDescription);
 
     }
 

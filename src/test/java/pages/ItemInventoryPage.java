@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class InventoryPage {
+public class ItemInventoryPage {
 
     protected WebDriver driver;
 
@@ -22,7 +22,7 @@ public class InventoryPage {
     private static final String ITEM_NAME = "(//div[@class='inventory_item_name'])[%d]";
 
 
-    public InventoryPage(WebDriver driver){
+    public ItemInventoryPage(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
     }
