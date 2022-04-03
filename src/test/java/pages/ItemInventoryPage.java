@@ -20,6 +20,8 @@ public class ItemInventoryPage {
 
     private static final String ITEM_NAME = "(//div[@class='inventory_item_name'])[%d]";
 
+    private static final String ITEM_IMAGE_SRC= "//img[@src='%s']";
+
 
     public ItemInventoryPage(WebDriver driver){
         this.driver=driver;
@@ -27,7 +29,7 @@ public class ItemInventoryPage {
     }
 
     public void checkInventory(Integer inventoryNumber, String productName, String productPrice,
-                                  String productDescription) {
+                                  String productDescription,String productImageScr) {
         String xpathOfItemName = String.format(ITEM_NAME, inventoryNumber);
         WebElement itemName = driver.findElement(By.xpath(xpathOfItemName));
 
@@ -37,16 +39,21 @@ public class ItemInventoryPage {
         String xpathOfItemPrice = String.format(ITEM_PRICE, inventoryNumber);
         WebElement itemPrice = driver.findElement(By.xpath(xpathOfItemPrice));
 
+        String xpathOfItemImageSrc = String.format(ITEM_IMAGE_SRC,productImageScr);
+        WebElement itemImage = driver.findElement(By.xpath(xpathOfItemImageSrc));
+
 
         FluentWait fluentWait=new FluentWait(driver).withTimeout(Duration.ofSeconds(3));
         fluentWait.until(ExpectedConditions.visibilityOf(itemName));
         fluentWait.until(ExpectedConditions.visibilityOf(itemPrice));
         fluentWait.until(ExpectedConditions.visibilityOf(itemDescription));
+        fluentWait.until(ExpectedConditions.visibilityOf(itemImage));
 
 
         Assert.assertEquals(itemName.getText(),productName);
         Assert.assertTrue(itemDescription.getText().contains(productDescription));
         Assert.assertEquals(itemPrice.getText(),productPrice);
+        Assert.assertTrue(itemImage.isDisplayed());
 
     }
 }

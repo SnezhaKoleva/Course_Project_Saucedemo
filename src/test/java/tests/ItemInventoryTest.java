@@ -17,12 +17,13 @@ public class ItemInventoryTest extends TestUtil {
     }
     @Test(dataProvider = "inventoryItem")
     public void inventoryCheck(String itemNumber,String itemName,String itemPrice,
-                               String itemDescription){
+                               String itemDescription,String itemImage){
         LoginPage loginPage=new LoginPage(driver);
         loginPage.login("standard_user","secret_sauce");
 
         ItemInventoryPage itemInventoryPage =new ItemInventoryPage(driver);
-        itemInventoryPage.checkInventory(Integer.valueOf(itemNumber),itemName,itemPrice,itemDescription);
+        itemInventoryPage.checkInventory(Integer.valueOf(itemNumber),itemName,itemPrice,
+                itemDescription,itemImage);
 
     }
 
