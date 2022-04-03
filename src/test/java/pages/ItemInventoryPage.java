@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -27,7 +26,7 @@ public class ItemInventoryPage {
         PageFactory.initElements(driver,this);
     }
 
-    public boolean checkInventory(Integer inventoryNumber, String productName, String productPrice,
+    public void checkInventory(Integer inventoryNumber, String productName, String productPrice,
                                   String productDescription) {
         String xpathOfItemName = String.format(ITEM_NAME, inventoryNumber);
         WebElement itemName = driver.findElement(By.xpath(xpathOfItemName));
@@ -45,18 +44,10 @@ public class ItemInventoryPage {
         fluentWait.until(ExpectedConditions.visibilityOf(itemDescription));
 
 
-
-        try {
-            itemDescription.getText().contains(productDescription);
-
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-
         Assert.assertEquals(itemName.getText(),productName);
+        Assert.assertTrue(itemDescription.getText().contains(productDescription));
         Assert.assertEquals(itemPrice.getText(),productPrice);
 
-        return true;
     }
 }
 
