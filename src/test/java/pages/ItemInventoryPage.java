@@ -38,10 +38,12 @@ public class ItemInventoryPage {
         String xpathOfItemPrice = String.format(ITEM_PRICE, inventoryNumber);
         WebElement itemPrice = driver.findElement(By.xpath(xpathOfItemPrice));
 
+
         FluentWait fluentWait=new FluentWait(driver).withTimeout(Duration.ofSeconds(3));
         fluentWait.until(ExpectedConditions.visibilityOf(itemName));
         fluentWait.until(ExpectedConditions.visibilityOf(itemPrice));
         fluentWait.until(ExpectedConditions.visibilityOf(itemDescription));
+
 
 
         try {
