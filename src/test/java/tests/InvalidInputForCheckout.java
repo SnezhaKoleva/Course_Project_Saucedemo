@@ -27,10 +27,11 @@ public class InvalidInputForCheckout extends TestUtil {
         productsPage.addItemToTheCart("sauce-labs-bike-light");
 
         CheckOutPage checkOutPage = new CheckOutPage(driver);
+
         productsPage.clickTheCartLink();
-        Thread.sleep(3000);
+
         checkOutPage.invalidInputValidationForCheckout(firstName,lastName,code);
-        Thread.sleep(3000);
+
    }
 
 }
