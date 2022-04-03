@@ -20,6 +20,8 @@ public class ItemInventoryPage {
 
     private static final String ITEM_NAME = "(//div[@class='inventory_item_name'])[%d]";
 
+    private static final String ITEM_IMAGE_INVENTORY = "(//div[@class='inventory_item_img'])[%d]";
+
     private static final String ITEM_IMAGE_SRC= "//img[@src='%s']";
 
 
@@ -40,21 +42,26 @@ public class ItemInventoryPage {
         String xpathOfItemPrice = String.format(ITEM_PRICE, inventoryNumber);
         WebElement itemPrice = driver.findElement(By.xpath(xpathOfItemPrice));
 
+        String xpathOfItemImageInventory = String.format(ITEM_IMAGE_INVENTORY,inventoryNumber);
+        WebElement itemImageInventory = driver.findElement(By.xpath(xpathOfItemImageInventory));
+
         String xpathOfItemImageSrc = String.format(ITEM_IMAGE_SRC,productImageScr);
-        WebElement itemImage = driver.findElement(By.xpath(xpathOfItemImageSrc));
+        WebElement itemImageSrc = driver.findElement(By.xpath(xpathOfItemImageSrc));
 
 
         FluentWait fluentWait=new FluentWait(driver).withTimeout(Duration.ofSeconds(3));
         fluentWait.until(ExpectedConditions.visibilityOf(itemName));
         fluentWait.until(ExpectedConditions.visibilityOf(itemPrice));
         fluentWait.until(ExpectedConditions.visibilityOf(itemDescription));
-        fluentWait.until(ExpectedConditions.visibilityOf(itemImage));
+        fluentWait.until(ExpectedConditions.visibilityOf(itemImageInventory));
+        fluentWait.until(ExpectedConditions.visibilityOf(itemImageSrc));
 
 
         Assert.assertEquals(itemName.getText(),productName);
         Assert.assertTrue(itemDescription.getText().contains(productDescription));
         Assert.assertEquals(itemPrice.getText(),productPrice);
-        Assert.assertTrue(itemImage.isDisplayed());
+        Assert.assertTrue(itemImageSrc.isDisplayed());
+        Assert.assertEquals(itemImageInventory.getLocation(),itemImageSrc.getLocation());
 
     }
 }
