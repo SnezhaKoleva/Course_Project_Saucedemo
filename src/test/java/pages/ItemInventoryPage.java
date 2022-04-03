@@ -14,13 +14,13 @@ public class ItemInventoryPage {
 
     protected WebDriver driver;
 
-    private static final String ITEM_PRICE = "(//div[@class='inventory_item_price'])[%d]";
+    private static final String INVENTORY_ITEM_PRICE = "(//div[@class='inventory_item_price'])[%d]";
 
-    private static final String ITEM_DESCRIPTION = "(//div[@class='inventory_item_desc'])[%d]";
+    private static final String INVENTORY_ITEM_DESCRIPTION = "(//div[@class='inventory_item_desc'])[%d]";
 
-    private static final String ITEM_NAME = "(//div[@class='inventory_item_name'])[%d]";
+    private static final String INVENTORY_ITEM_NAME = "(//div[@class='inventory_item_name'])[%d]";
 
-    private static final String ITEM_IMAGE_INVENTORY = "(//div[@class='inventory_item_img'])[%d]";
+    private static final String INVENTORY_ITEM_IMAGE = "(//div[@class='inventory_item_img'])[%d]";
 
     private static final String ITEM_IMAGE_SRC= "//img[@src='%s']";
 
@@ -33,16 +33,16 @@ public class ItemInventoryPage {
     public void checkInventory(Integer inventoryNumber, String productName, String productPrice,
                                   String productDescription,String productImageScr) {
 
-        String xpathOfItemName = String.format(ITEM_NAME, inventoryNumber);
+        String xpathOfItemName = String.format(INVENTORY_ITEM_NAME, inventoryNumber);
         WebElement itemName = driver.findElement(By.xpath(xpathOfItemName));
 
-        String xpathOfItemDescription = String.format(ITEM_DESCRIPTION, inventoryNumber);
+        String xpathOfItemDescription = String.format(INVENTORY_ITEM_DESCRIPTION, inventoryNumber);
         WebElement itemDescription = driver.findElement(By.xpath(xpathOfItemDescription));
 
-        String xpathOfItemPrice = String.format(ITEM_PRICE, inventoryNumber);
+        String xpathOfItemPrice = String.format(INVENTORY_ITEM_PRICE, inventoryNumber);
         WebElement itemPrice = driver.findElement(By.xpath(xpathOfItemPrice));
 
-        String xpathOfItemImageInventory = String.format(ITEM_IMAGE_INVENTORY,inventoryNumber);
+        String xpathOfItemImageInventory = String.format(INVENTORY_ITEM_IMAGE,inventoryNumber);
         WebElement itemImageInventory = driver.findElement(By.xpath(xpathOfItemImageInventory));
 
         String xpathOfItemImageSrc = String.format(ITEM_IMAGE_SRC,productImageScr);
