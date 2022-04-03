@@ -30,6 +30,7 @@ public class ItemInventoryPage {
 
     public void checkInventory(Integer inventoryNumber, String productName, String productPrice,
                                   String productDescription,String productImageScr) {
+
         String xpathOfItemName = String.format(ITEM_NAME, inventoryNumber);
         WebElement itemName = driver.findElement(By.xpath(xpathOfItemName));
 
