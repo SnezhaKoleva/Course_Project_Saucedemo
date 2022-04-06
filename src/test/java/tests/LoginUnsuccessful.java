@@ -19,7 +19,7 @@ public class LoginUnsuccessful extends TestUtil {
     @Test(dataProvider = "csvInvalidUsers")
     public void unsuccessfulLogin(String username,String password){
 
-        LoginPage loginPage=new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.tryLogin(username,password);
     }
 }

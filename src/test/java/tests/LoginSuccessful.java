@@ -18,7 +18,7 @@ public class LoginSuccessful extends TestUtil {
     @Test(dataProvider="csvValidUsers")
     public void successfulLogin(String username,String password){
 
-        LoginPage loginPage=new LoginPage(driver);
-        ProductsPage productsPage =loginPage.login(username,password);
+        LoginPage loginPage = new LoginPage(driver);
+        ProductsPage productsPage = loginPage.login(username,password);
 }
 }

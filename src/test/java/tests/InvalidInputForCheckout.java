@@ -22,7 +22,7 @@ public class InvalidInputForCheckout extends TestUtil {
     public void invalidInputCheckoutValidation(String firstName, String lastName, String code)
             throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
-        ProductsPage productsPage =loginPage.login("standard_user","secret_sauce");
+        ProductsPage productsPage = loginPage.login("standard_user","secret_sauce");
 
         productsPage.addItemToTheCart("sauce-labs-bike-light");
 

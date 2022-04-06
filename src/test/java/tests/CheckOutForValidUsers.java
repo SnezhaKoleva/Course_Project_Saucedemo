@@ -21,13 +21,13 @@ public class CheckOutForValidUsers extends TestUtil {
     @Test(dataProvider = "csvValidUsers")
     public void checkOut(String userName,String password) throws InterruptedException {
 
-        LoginPage loginPage=new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
         ProductsPage productsPage = loginPage.login(userName,password);
-        CheckOutPage checkOutPage =new CheckOutPage(driver);
+        CheckOutPage checkOutPage = new CheckOutPage(driver);
 
         productsPage.addItemToTheCart("sauce-labs-bolt-t-shirt");
 
-        SoftAssert softAssert=new SoftAssert();
+        SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(productsPage.getItemsInTheCart(),1,"One added product");
 
 

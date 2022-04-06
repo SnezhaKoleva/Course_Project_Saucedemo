@@ -37,13 +37,13 @@ public class ProductsPage {
 
         addToCartButton.click();
 
-        String xpathOfRemoveItemButton=String.format(REMOVE_ITEM_BUTTON,productName);
+        String xpathOfRemoveItemButton = String.format(REMOVE_ITEM_BUTTON,productName);
         WebElement removeItemButton = driver.findElement(By.xpath(xpathOfRemoveItemButton));
         fluentWait.until(ExpectedConditions.elementToBeClickable(removeItemButton));
         Assert.assertTrue(removeItemButton.isDisplayed());
     }
     public void removeItem(String productName){
-        String xpathOfRemoveItemButton=String.format(REMOVE_ITEM_BUTTON,productName);
+        String xpathOfRemoveItemButton = String.format(REMOVE_ITEM_BUTTON,productName);
         WebElement removeItemButton = driver.findElement(By.xpath(xpathOfRemoveItemButton));
 
         FluentWait fluentWait=new FluentWait(driver).withTimeout(Duration.ofSeconds(3));

@@ -19,10 +19,10 @@ public class ItemInventoryValidUser extends TestUtil {
     public void inventoryCheck(String userName,String password,
                                String itemNumber,String itemName,String itemPrice,
                                String itemDescription,String itemImage){
-        LoginPage loginPage=new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.login(userName,password);
 
-        ItemInventoryPage itemInventoryPage =new ItemInventoryPage(driver);
+        ItemInventoryPage itemInventoryPage = new ItemInventoryPage(driver);
         itemInventoryPage.checkInventory(Integer.valueOf(itemNumber),itemName,itemPrice,
                 itemDescription,itemImage);
 
