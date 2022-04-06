@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.ProductsPage;
 import utils.CsvHelper;
-
 import java.io.IOException;
 
 public class LoginSuccessful extends TestUtil {
@@ -21,6 +20,5 @@ public class LoginSuccessful extends TestUtil {
 
         LoginPage loginPage=new LoginPage(driver);
         ProductsPage productsPage =loginPage.login(username,password);
-
 }
 }
