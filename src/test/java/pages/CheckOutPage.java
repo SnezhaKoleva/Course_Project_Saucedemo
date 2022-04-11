@@ -40,13 +40,13 @@ public class CheckOutPage {
 
 
     public CheckOutPage(WebDriver driver){
-        this.driver=driver;
+        this.driver = driver;
         PageFactory.initElements(driver,this);
     }
 
     public void checkOut() throws InterruptedException
     {
-        FluentWait fluentWait=new FluentWait(driver).withTimeout(Duration.ofSeconds(3));
+        FluentWait fluentWait = new FluentWait(driver).withTimeout(Duration.ofSeconds(3));
         fluentWait.until(ExpectedConditions.elementToBeClickable(checkoutBtn));
         checkoutBtn.click();
 

@@ -21,7 +21,7 @@ public class ItemInventoryPage {
 
     private static final String INVENTORY_ITEM_IMAGE = "(//div[@class='inventory_item_img'])[%d]";
 
-    private static final String ITEM_IMAGE_SRC= "//img[@src='%s']";
+    private static final String ITEM_IMAGE_SRC = "//img[@src='%s']";
 
 
     public ItemInventoryPage(WebDriver driver){
@@ -48,7 +48,7 @@ public class ItemInventoryPage {
         WebElement itemImageSrc = driver.findElement(By.xpath(xpathOfItemImageSrc));
 
 
-        FluentWait fluentWait=new FluentWait(driver).withTimeout(Duration.ofSeconds(3));
+        FluentWait fluentWait = new FluentWait(driver).withTimeout(Duration.ofSeconds(3));
         fluentWait.until(ExpectedConditions.visibilityOf(itemName));
         fluentWait.until(ExpectedConditions.visibilityOf(itemPrice));
         fluentWait.until(ExpectedConditions.visibilityOf(itemDescription));
