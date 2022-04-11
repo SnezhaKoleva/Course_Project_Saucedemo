@@ -15,6 +15,7 @@ public class LoginSuccessful extends TestUtil {
     public static Object [][] readValidUsersFromScvFile() throws IOException, CsvException {
         return CsvHelper.readScvFile("src/test/resources/valid.users.csv");
     }
+
     @Test(dataProvider="csvValidUsers")
     public void successfulLogin(String username,String password){
 

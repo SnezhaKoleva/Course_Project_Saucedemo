@@ -9,7 +9,6 @@ import pages.CheckOutPage;
 import pages.LoginPage;
 import pages.ProductsPage;
 import utils.CsvHelper;
-
 import java.io.IOException;
 
 public class CheckOutForEveryItem extends TestUtil {

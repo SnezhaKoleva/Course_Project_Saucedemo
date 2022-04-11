@@ -8,9 +8,8 @@ import pages.CheckOutPage;
 import pages.LoginPage;
 import pages.ProductsPage;
 import utils.CsvHelper;
-
-
 import java.io.IOException;
+
 
 public class InvalidInputForCheckout extends TestUtil {
 
@@ -18,6 +17,7 @@ public class InvalidInputForCheckout extends TestUtil {
     public static Object [][] readValidUsersFromScvFile() throws IOException, CsvException {
         return CsvHelper.readScvFile("src/test/resources/invalid.input.checkout.csv");
     }
+
     @Test(dataProvider = "csvInvalidInput")
     public void invalidInputCheckoutValidation(String firstName, String lastName, String code)
             throws InterruptedException {
