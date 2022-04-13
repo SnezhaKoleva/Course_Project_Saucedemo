@@ -11,7 +11,7 @@ import utils.CsvHelper;
 import java.io.IOException;
 
 
-public class AddToCart extends TestUtil {
+public class AddToCartForEveryItem extends TestUtil {
 
     @DataProvider(name = "csvItems")
     public static Object[][] readValidUsersFromScvFile() throws IOException, CsvException {
