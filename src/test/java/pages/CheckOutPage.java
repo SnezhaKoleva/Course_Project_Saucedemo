@@ -52,16 +52,16 @@ public class CheckOutPage {
 
         firstNameInput.click();
         firstNameInput.clear();
-        firstNameInput.sendKeys("nnn");
+        firstNameInput.sendKeys("Ani");
 
         lastNameInput.click();
         lastNameInput.clear();
-        lastNameInput.sendKeys("jjj");
+        lastNameInput.sendKeys("Joh");
 
         fluentWait.until(ExpectedConditions.elementToBeClickable(codeInput));
         codeInput.click();
         codeInput.clear();
-        codeInput.sendKeys("mmmm");
+        codeInput.sendKeys("1000");
 
 
         fluentWait.until(ExpectedConditions.elementToBeClickable(submitContinueBtn));
