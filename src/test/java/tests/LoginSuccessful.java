@@ -5,7 +5,6 @@ import com.opencsv.exceptions.CsvException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import pages.ProductsPage;
 import utils.CsvHelper;
 import java.io.IOException;
 
@@ -20,6 +19,6 @@ public class LoginSuccessful extends TestUtil {
     public void successfulLogin(String username,String password){
 
         LoginPage loginPage = new LoginPage(driver);
-        ProductsPage productsPage = loginPage.login(username,password);
+        loginPage.login(username,password);
 }
 }
