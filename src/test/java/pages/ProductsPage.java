@@ -61,11 +61,11 @@ public class ProductsPage {
             return Integer.parseInt(shoppingCartCounter.getText());
     }
 
-    public void clickTheCartLink() {
-        shoppingCartLink.click();
 
-    }
-
+     public CheckOutPage clickTheCartLink (){
+         shoppingCartLink.click();
+         return new CheckOutPage(driver);
+     }
 
 }
 
