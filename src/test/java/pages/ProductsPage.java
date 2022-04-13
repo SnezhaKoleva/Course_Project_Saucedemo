@@ -42,6 +42,7 @@ public class ProductsPage {
         fluentWait.until(ExpectedConditions.elementToBeClickable(removeItemButton));
         Assert.assertTrue(removeItemButton.isDisplayed());
     }
+
     public void removeItem(String productName){
         String xpathOfRemoveItemButton = String.format(REMOVE_ITEM_BUTTON,productName);
         WebElement removeItemButton = driver.findElement(By.xpath(xpathOfRemoveItemButton));
