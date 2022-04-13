@@ -59,6 +59,7 @@ public class ItemInventoryPage {
         Assert.assertEquals(itemName.getText(),productName);
         Assert.assertTrue(itemDescription.getText().contains(productDescription));
         Assert.assertEquals(itemPrice.getText(),productPrice);
+        Assert.assertTrue(itemImageInventory.isDisplayed());
         Assert.assertTrue(itemImageSrc.isDisplayed());
         Assert.assertEquals(itemImageInventory.getLocation(),itemImageSrc.getLocation());
 
