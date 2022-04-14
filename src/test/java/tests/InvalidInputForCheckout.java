@@ -30,6 +30,6 @@ public class InvalidInputForCheckout extends TestUtil {
         productsPage.clickTheCartLink();
         checkOutPage.invalidInputValidationForCheckout(firstName,lastName,code);
 
-   }
+    }
 
 }
