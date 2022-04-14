@@ -26,11 +26,8 @@ public class InvalidInputForCheckout extends TestUtil {
         ProductsPage productsPage = loginPage.login("standard_user","secret_sauce");
 
         productsPage.addItemToTheCart(itemName);
-
         CheckoutPage checkOutPage = new CheckoutPage(driver);
-
         productsPage.clickTheCartLink();
-
         checkOutPage.invalidInputValidationForCheckout(firstName,lastName,code);
 
    }

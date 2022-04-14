@@ -33,13 +33,11 @@ public class CheckoutRemoveValidUsers extends TestUtil {
 
         productsPage.addItemToTheCart(secondAddedItem);
         softAssert.assertEquals(productsPage.getItemsInTheCart(),2,"Two added products");
-
         productsPage.clickTheCartLink();
 
         productsPage.removeItem(addedRemovedItem);
         softAssert.assertEquals(productsPage.getItemsInTheCart(),1,
                 "One product removed,one left");
-
         checkOutPage.checkOut();
 
         softAssert.assertAll();
