@@ -49,7 +49,7 @@ public class ProductsPage {
 
         FluentWait fluentWait = new FluentWait(driver).withTimeout(Duration.ofSeconds(3));
         fluentWait.until(ExpectedConditions.elementToBeClickable(removeItemButton));
-        Assert.assertTrue(removeItemButton.isDisplayed());
+
         removeItemButton.click();
 
     }
@@ -62,9 +62,9 @@ public class ProductsPage {
     }
 
 
-     public CheckOutPage clickTheCartLink (){
+     public CheckoutPage clickTheCartLink (){
          shoppingCartLink.click();
-         return new CheckOutPage(driver);
+         return new CheckoutPage(driver);
      }
 
 }

@@ -4,7 +4,7 @@ import base.TestUtil;
 import com.opencsv.exceptions.CsvException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.CheckOutPage;
+import pages.CheckoutPage;
 import pages.LoginPage;
 import pages.ProductsPage;
 import utils.CsvHelper;
@@ -19,14 +19,15 @@ public class InvalidInputForCheckout extends TestUtil {
     }
 
     @Test(dataProvider = "csvInvalidInput")
-    public void invalidInputCheckoutValidation(String firstName, String lastName, String code)
+    public void invalidInputCheckoutValidation(String itemName,
+                                               String firstName, String lastName, String code)
             throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         ProductsPage productsPage = loginPage.login("standard_user","secret_sauce");
 
-        productsPage.addItemToTheCart("sauce-labs-bike-light");
+        productsPage.addItemToTheCart(itemName);
 
-        CheckOutPage checkOutPage = new CheckOutPage(driver);
+        CheckoutPage checkOutPage = new CheckoutPage(driver);
 
         productsPage.clickTheCartLink();
 

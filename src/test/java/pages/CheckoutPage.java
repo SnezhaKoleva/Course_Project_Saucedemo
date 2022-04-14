@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
 import java.time.Duration;
 
-public class CheckOutPage {
+public class CheckoutPage {
 
 
     protected WebDriver driver;
@@ -39,7 +39,7 @@ public class CheckOutPage {
     private WebElement errorEmptyInput;
 
 
-    public CheckOutPage(WebDriver driver){
+    public CheckoutPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }

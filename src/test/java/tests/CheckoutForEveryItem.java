@@ -5,13 +5,13 @@ import com.opencsv.exceptions.CsvException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import pages.CheckOutPage;
+import pages.CheckoutPage;
 import pages.LoginPage;
 import pages.ProductsPage;
 import utils.CsvHelper;
 import java.io.IOException;
 
-public class CheckOutForEveryItem extends TestUtil {
+public class CheckoutForEveryItem extends TestUtil {
 
     @DataProvider(name = "csvItems")
     public static Object [][] readItemsFromCsvFile() throws IOException, CsvException {
@@ -25,11 +25,9 @@ public class CheckOutForEveryItem extends TestUtil {
 
         LoginPage loginPage = new LoginPage(driver);
         ProductsPage productsPage = loginPage.login("standard_user", "secret_sauce");
-
-        CheckOutPage checkOutPage = new CheckOutPage(driver);
+        CheckoutPage checkOutPage = new CheckoutPage(driver);
 
         productsPage.addItemToTheCart(itemName);
-
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(productsPage.getItemsInTheCart(),1,"One added product");
 

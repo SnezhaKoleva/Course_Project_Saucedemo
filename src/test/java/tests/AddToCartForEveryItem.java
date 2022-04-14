@@ -24,7 +24,6 @@ public class AddToCartForEveryItem extends TestUtil {
         ProductsPage productsPage = loginPage.login("standard_user", "secret_sauce");
 
         productsPage.addItemToTheCart(productsName);
-
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(productsPage.getItemsInTheCart(), 1, "One added product");
 
